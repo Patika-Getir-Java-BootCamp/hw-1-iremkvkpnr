@@ -27,7 +27,7 @@
 
     Interface, sınıflara ait metotların sadece imzalarının bulunduğu, implementasyonlarının bulunmadığı bir yapıdır. Interface içerisinde sadece soyut metotlar tanımlanabilir. Eğer bir sınıf interface'den miras alırsa, interface'de tanımlanmış olan her bir soyut özelliği de (metotları da) miras alması gerekir. Miras alan sınıf, interface'de bulunan bir veya daha fazla metoda ihtiyaç duymuyorsa yazılımın tasarımsal açıdan bir sorunu var demektir. Bu sorun, interface'lerin alt interface'lere bölünmesiyle yani **Interface Segregation** ile çözülebilir.
 
-![Resim Açıklaması](file://C:\Users\Asuss\Desktop\patikahw1\hw-1-iremkvkpnr\images\resim1.png?msec=1742582807161)
+![abstract-interface-diff](images/resim1.png)
 
 # 3 – Why wee need equals and hashcode ? When to override ?
 
@@ -92,7 +92,7 @@ class Person {
 
     Java'daki elmas problemi, bir sınıfın aynı temel sınıftan miras alan iki sınıftan miras aldığı çoklu miras bağlamında ortaya çıkan belirsizliğe atıfta bulunur. Bu, elmas biçimli bir miras yapısı oluşturur ve yöntem çözümünde belirsizliğe yol açar.
 
-![Resim Açıklaması](file://C:\Users\Asuss\Desktop\patikahw1\hw-1-iremkvkpnr\images\resim2.png?msec=1742582952853)
+![diamond-problem](images/resim2.png)
 
 ## Önemli Noktalar
 
@@ -122,11 +122,7 @@ public class Main {
 }
 ```
 
-    Yukarıdaki örnekte Integer tipinde 3 değişken oluşturulmuştur. a ve b değişkenleri toplam değişkeninde
-işlem gördükten sonra bir daha kullanılmamıştır. Dolayısıyla programın akışı
-boyunca bellekte sürekli olarak gereksiz yer işgal edecektir. Garbage Collector
-ise bu süreçte programı yukarıdan aşağıya akışını takip eder ve belleği işgal
-eden alanları boşaltır.
+    Yukarıdaki örnekte Integer tipinde 3 değişken oluşturulmuştur. a ve b değişkenleri toplam değişkeninde işlem gördükten sonra bir daha kullanılmamıştır. Dolayısıyla programın akışı boyunca bellekte sürekli olarak gereksiz yer işgal edecektir. Garbage Collector ise bu süreçte programı yukarıdan aşağıya akışını takip eder ve belleği işgal eden alanları boşaltır.
 
     Bir süreç (process) başladığı anda bellekte bu process için boş bir yer ayırılır. Bu ayrılan boşluğa daha önce **Bilgisayar ve Bellek** konusunda bahsettiğimiz heap bölgesi denir. Referanslar aracılığıyla heap bellekten nesnelerin yerleri tutulur. RunTime'da oluşturulan nesneler, uygulama tarafından ihtiyaç duyulmadığı zamanlarda ya da programda oluşturulan nesnenin işi bittiğinde, heap bellekten temizlenir. Bu işlem için "Garbage Collector" mekanizması kullanılır.
 
